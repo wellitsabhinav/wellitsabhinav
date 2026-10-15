@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-labelledby="title desc">
+  <title id="title">Abhinav Choudhary — Silicon / VLSI</title>
+  <desc id="desc">RTL, physical design, DFT and memory reliability. Abstract standard-cell rows, memory array and routed interconnect on graphite.</desc>
+  <defs>
+    <pattern id="cells" width="24" height="16" patternUnits="userSpaceOnUse">
+      <rect x="2" y="3" width="18" height="9" rx="1" fill="#313b3b"/>
+    </pattern>
+    <pattern id="memory" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect x="2" y="2" width="7" height="7" fill="#53625c"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="240" rx="8" fill="#191e20"/>
+  <path d="M0 0H960" stroke="#c49a76" stroke-width="5"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="38" y="45" fill="#b4c0ba" font-size="15" letter-spacing="2">SILICON / VLSI</text>
+    <text x="36" y="111" fill="#f4f0e8" font-size="49" font-weight="700" letter-spacing="-1.7">ABHINAV CHOUDHARY</text>
+    <text x="38" y="151" fill="#ccd1ca" font-size="19">RTL · Physical design · DFT · Memory reliability</text>
+    <path d="M38 178H617" stroke="#46524f"/>
+    <text x="38" y="207" fill="#c49a76" font-size="15" letter-spacing=".6">Hardware hypotheses. Physical evidence.</text>
+  </g>
+  <g opacity=".95">
+    <rect x="686" y="35" width="238" height="170" rx="3" fill="none" stroke="#53625c"/>
+    <rect x="700" y="51" width="89" height="70" fill="url(#memory)" stroke="#75877a"/>
+    <rect x="805" y="51" width="103" height="139" fill="url(#cells)"/>
+    <rect x="700" y="137" width="89" height="53" fill="url(#cells)"/>
+    <path d="M722 105V129H831V171H886" fill="none" stroke="#c49a76" stroke-width="2.5"/>
+    <path d="M761 75H796V99H868V145H908M745 163H796V183H855" fill="none" stroke="#91a995" stroke-width="1.5"/>
+    <path d="M677 75H700M924 99H935M677 163H700M851 26V51M886 190V216" fill="none" stroke="#73837a"/>
+    <g fill="#d1ac87"><circle cx="722" cy="105" r="3"/><circle cx="831" cy="129" r="3"/><circle cx="886" cy="171" r="3"/></g>
+    <g fill="#a4b7a6"><circle cx="761" cy="75" r="2.5"/><circle cx="868" cy="99" r="2.5"/><circle cx="745" cy="163" r="2.5"/></g>
+  </g>
+</svg>
