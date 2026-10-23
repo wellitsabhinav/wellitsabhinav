@@ -19,6 +19,8 @@ Branding combines a memory array, logic floorplan and timing trace as abstract i
 
 Generated SVGs carry a `viewBox`, title/description and README alternative text. The calendar preserves API-provided intensities. Narrow screens receive four larger-cell calendar panels. Trend/statistics use 480-unit layouts. The timeline stays an optional link because seven tall milestones would repeat the prominent text contribution section.
 
+The upstream evidence list uses normal paragraphs/bullets so its status text remains visible on narrow screens. Picture media queries follow the browser/system color preference; a manually overridden GitHub theme can show a dark panel on a light page (or the reverse). Each panel has its own high-contrast canvas and remains readable. Both explicit SVG variants are kept for direct inspection.
+
 [Platane/snk](https://github.com/Platane/snk) was evaluated. It animates real contribution squares, but motion and another action dependency do not add engineering evidence here. The static calendar and analytical trends better serve this design; no animation is installed.
 
 Run `python scripts/validate_profile.py` and `python -m unittest discover -s tests -v`. Inspect the actual GitHub branch README at desktop/mobile widths and check picture sources and normal text. A local preview alone cannot establish GitHub sanitization behavior. See [maintenance](MAINTENANCE.md).

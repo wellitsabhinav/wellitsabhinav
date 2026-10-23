@@ -27,6 +27,15 @@ def fixture():
 
 
 class ActivityTests(unittest.TestCase):
+    def test_schema_window_and_intensity_contract(self):
+        for mutation in ('schema', 'window', 'intensity'):
+            with self.subTest(mutation=mutation):
+                data = fixture()
+                if mutation == 'schema': data['schema_version'] = 2
+                if mutation == 'window': data['start'] = '2025-10-25'
+                if mutation == 'intensity': data['days'][0]['level'] = 1
+                with self.assertRaises(AssertionError): fetch.validate(data)
+
     def test_missing_duplicate_dates_rejected(self):
         for mutation in ('missing', 'duplicate', 'negative', 'total'):
             with self.subTest(mutation=mutation):

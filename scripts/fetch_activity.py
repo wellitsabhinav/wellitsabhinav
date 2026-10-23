@@ -140,10 +140,13 @@ def fetch(login, end, token):
 
 
 def validate(data):
+    assert data['schema_version'] == 1, 'Unsupported activity snapshot schema'
     start, end = date.fromisoformat(data['start']), date.fromisoformat(data['end'])
+    assert (end - start).days == 364, 'Expected exactly 365 completed UTC days'
     expected = [(start + timedelta(days=i)).isoformat() for i in range((end - start).days + 1)]
     assert [d['date'] for d in data['days']] == expected, 'Missing, duplicate, or unordered contribution dates'
     assert all(type(d['count']) is int and d['count'] >= 0 and d['level'] in range(5) for d in data['days'])
+    assert all((d['count'] == 0) == (d['level'] == 0) for d in data['days']), 'Count/intensity inconsistency'
     assert sum(d['count'] for d in data['days']) == data['calendar_total'], 'Calendar total mismatch'
     assert all(type(v) is int and v >= 0 for v in data['stats'].values())
     assert data['monthly'][0]['start'] == data['start'] and data['monthly'][-1]['end'] == data['end']
