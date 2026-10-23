@@ -1,6 +1,6 @@
 # Activity data in text
 
-Period: **2025-10-23–2026-10-22 UTC**. Last successful data coverage: **2026-10-22**.
+Period: **2025-10-23–2026-10-22 UTC**. Last successful data coverage: **2026-10-22**. Assets published: **2026-10-23 UTC**.
 
 API-visible calendar: **714 contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count. Counts can differ from the native GitHub calendar; see the observed visibility limitation below.
 
