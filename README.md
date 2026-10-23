@@ -62,12 +62,10 @@ I build and evaluate digital hardware across RTL, verification, physical impleme
 
 Implementation fixes, native regressions and minimal reproducers make the work inspectable beyond my own projects. These are contributions to other maintainers' repositories; my OpenSTA/OpenROAD repositories are contribution forks.
 
-| Evidence | Engineering change | Verified outcome |
-|---|---|---|
-| [OpenSTA #538](https://github.com/parallaxsw/OpenSTA/pull/538), [issue #537](https://github.com/parallaxsw/OpenSTA/issues/537) | Reject unsupported `wor`/`wand` declarations before alias merging corrupts input connectivity | **Merged 15 Oct 2026**; issue closed. Does not implement wired-logic support. |
-| [OpenSTA fork #420](https://github.com/The-OpenROAD-Project/OpenSTA/pull/420) | Preserve renamed input aliases; reject shared signal inputs before opening the output file; seven native regressions | **Merged 20 Oct 2026** into The-OpenROAD-Project/OpenSTA |
-| [OpenSTA #540](https://github.com/parallaxsw/OpenSTA/pull/540), [issue #536](https://github.com/parallaxsw/OpenSTA/issues/536) | Port the writer repair to canonical upstream, with registered Tcl regressions | **Merged 21 Oct 2026** |
-| [OpenROAD #11624](https://github.com/The-OpenROAD-Project/OpenROAD/pull/11624) | Keep top ports on local module nets through child feedthroughs; add connectivity/DEF regressions | **Merged 21 Oct 2026** into canonical upstream |
+- **15 Oct 2026 · MERGED — [OpenSTA #538](https://github.com/parallaxsw/OpenSTA/pull/538).** Reject unsupported `wor`/`wand` declarations before alias merging corrupts input connectivity. [Issue #537](https://github.com/parallaxsw/OpenSTA/issues/537) closed; wired-logic support is not implemented.
+- **20 Oct 2026 · MERGED — [OpenSTA #420](https://github.com/The-OpenROAD-Project/OpenSTA/pull/420).** Preserve renamed input aliases; reject shared signal inputs before opening the output file; seven native regressions. Merged into The-OpenROAD-Project/OpenSTA.
+- **21 Oct 2026 · MERGED — [OpenSTA #540](https://github.com/parallaxsw/OpenSTA/pull/540).** Port the writer repair to canonical upstream with registered Tcl regressions. [Original issue #536](https://github.com/parallaxsw/OpenSTA/issues/536).
+- **21 Oct 2026 · MERGED — [OpenROAD #11624](https://github.com/The-OpenROAD-Project/OpenROAD/pull/11624).** Keep top ports on local module nets through child feedthroughs; add connectivity/DEF regressions. Merged into canonical upstream.
 
 **Open proposals, checked 24 Oct 2026:** [FAN_ATPG #4](https://github.com/NTU-LaDS-II/FAN_ATPG/pull/4) repairs empty reports, scan identities and unsafe negative indexing. [DFT #1](https://github.com/mwsoli/OpenROAD/pull/1) and [DFT #2](https://github.com/mwsoli/OpenROAD/pull/2) target a maintainer's OpenROAD fork: compilation, fixed scan endpoints and metadata consistency. These are not upstream merges. [FAN construction report #5](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/5) and [fault identity report #6](https://github.com/NTU-LaDS-II/FAN_ATPG/issues/6) preserve additional reproductions. [Current automated status timeline](assets/activity/SUMMARY.md#upstream-evidence).
 
@@ -88,13 +86,13 @@ Project evidence here is public research and open-source work; no proprietary im
 
 ## GitHub activity
 
-Real GitHub data, refreshed approximately daily. The calendar shows **contributions across eligible event types**; the trend separates eligible commits, PRs, issues and submitted PR reviews. The last completed UTC date appears in every graphic. Counts follow API visibility; anonymous restricted aggregates may appear in the calendar. [Definitions and limitations](docs/ACTIVITY_DATA.md) · [Selectable statistics, monthly values and timeline](assets/activity/SUMMARY.md) · [Daily source data](assets/activity/activity.json).
+Real GitHub data, refreshed approximately daily. The calendar shows **API-visible contributions across eligible event types**; the trend separates eligible commits, PRs, issues and submitted PR reviews. Counts can differ from GitHub's native calendar; exact parity is not asserted. The last completed UTC date appears in every graphic. Anonymous restricted aggregates may appear if GitHub exposes them. [Definitions and observed visibility limits](docs/ACTIVITY_DATA.md) · [Selectable statistics, monthly values and timeline](assets/activity/SUMMARY.md) · [Daily source data](assets/activity/activity.json).
 
 <picture>
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/activity/calendar-mobile-dark.svg" />
   <source media="(max-width: 600px)" srcset="assets/activity/calendar-mobile-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/activity/calendar-dark.svg" />
-  <img src="assets/activity/calendar-light.svg" width="100%" alt="365-day contribution calendar with exact GitHub dates, contribution counts, month labels and intensity legend. A larger-cell layout is used on mobile. Data and a text alternative are linked above." />
+  <img src="assets/activity/calendar-light.svg" width="100%" alt="365-day API-visible contribution calendar preserving the source dates, counts and intensity levels, with month labels and a legend. A larger-cell layout is used on mobile. Source data and a text alternative are linked above." />
 </picture>
 
 <picture>

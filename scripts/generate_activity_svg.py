@@ -51,8 +51,8 @@ def calendar(data, p, mobile=False):
     panel_h = 257 if mobile else 160
     height = 106 + panels * panel_h + 72
     title = 'Contribution activity monitor'
-    s = SVG(width, height, title, f'{data["calendar_total"]} GitHub-visible contributions from {data["start"]} to {data["end"]}. Dates and intensity levels are supplied by GitHub. Private aggregates may be included if enabled; this is not a commit count.', p)
-    s.text(24, 34, 'CONTRIBUTION ACTIVITY', 19 if mobile else 18, p['accent'], font_weight=700, letter_spacing=1)
+    s = SVG(width, height, title, f'{data["calendar_total"]} API-visible contributions from {data["start"]} to {data["end"]}. Dates and intensity levels are supplied by GitHub. Counts may differ from the native calendar. This is not a commit count.', p)
+    s.text(24, 34, 'API-VISIBLE CONTRIBUTIONS', 18, p['accent'], font_weight=700, letter_spacing=1)
     s.text(24, 62, f'{data["calendar_total"]:,} contributions · 365 days', 21, font_weight=700)
     s.text(24, 86, f'{data["start"]} — {data["end"]}', 15, p['muted'])
     for panel in range(panels):
@@ -156,7 +156,7 @@ def timeline(data, p):
 
 def summary(data):
     lines = ['# Activity data in text', '', f'Period: **{data["start"]}–{data["end"]} UTC**. Last successful data coverage: **{data["end"]}**.', '',
-             f'GitHub-visible calendar: **{data["calendar_total"]:,} contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count.', '',
+             f'API-visible calendar: **{data["calendar_total"]:,} contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count. Counts can differ from the native GitHub calendar; see the observed visibility limitation below.', '',
              '[Definitions and visibility limits](../../docs/ACTIVITY_DATA.md) · [Machine-readable daily data](activity.json)', '',
              '| Metric | Count |', '|---|---:|']
     for key, value in data['stats'].items():
