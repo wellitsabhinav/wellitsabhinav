@@ -58,6 +58,7 @@ def calendar(data, p, mobile=False):
     for panel in range(panels):
         y0 = 132 + panel * panel_h
         months_seen = set()
+        last_month_x = -100
         for d in data['days']:
             day = date.fromisoformat(d['date'])
             offset = (day - sunday).days
@@ -66,9 +67,11 @@ def calendar(data, p, mobile=False):
                 continue
             x, y = 57 + (week % chunk) * pitch, y0 + weekday * pitch
             month = day.strftime('%b')
-            if month not in months_seen:
+            month_key = day.strftime('%Y-%m')
+            if month_key not in months_seen and (day.day == 1 or week % chunk == 0) and x - last_month_x >= (56 if mobile else 35):
                 s.text(x, y0 - 14, month, 16 if mobile else 13, p['muted'])
-                months_seen.add(month)
+                months_seen.add(month_key)
+                last_month_x = x
             s.items.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{p["levels"][d["level"]]}" stroke="{p["grid"]}" stroke-width=".5" data-date="{d["date"]}" data-count="{d["count"]}" data-level="{d["level"]}"><title>{d["date"]}: {d["count"]} contributions; GitHub intensity {d["level"]}/4</title></rect>')
         for weekday, label in [(1, 'M'), (3, 'W'), (5, 'F')]:
             s.text(26, y0 + weekday * pitch + cell - 1, label, 16 if mobile else 13, p['muted'])
