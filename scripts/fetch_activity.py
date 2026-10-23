@@ -143,6 +143,8 @@ def validate(data):
     assert data['schema_version'] == 1, 'Unsupported activity snapshot schema'
     start, end = date.fromisoformat(data['start']), date.fromisoformat(data['end'])
     assert (end - start).days == 364, 'Expected exactly 365 completed UTC days'
+    if 'updated_on' in data:
+        assert date.fromisoformat(data['updated_on']) >= end, 'Publication date precedes the data window'
     expected = [(start + timedelta(days=i)).isoformat() for i in range((end - start).days + 1)]
     assert [d['date'] for d in data['days']] == expected, 'Missing, duplicate, or unordered contribution dates'
     assert all(type(d['count']) is int and d['count'] >= 0 and d['level'] in range(5) for d in data['days'])

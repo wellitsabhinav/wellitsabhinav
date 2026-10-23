@@ -86,7 +86,7 @@ Project evidence here is public research and open-source work; no proprietary im
 
 ## GitHub activity
 
-Real GitHub data, refreshed approximately daily. The calendar shows **API-visible contributions across eligible event types**; the trend separates eligible commits, PRs, issues and submitted PR reviews. Counts can differ from GitHub's native calendar; exact parity is not asserted. The last completed UTC date appears in every graphic. Anonymous restricted aggregates may appear if GitHub exposes them. [Definitions and observed visibility limits](docs/ACTIVITY_DATA.md) · [Selectable statistics, monthly values and timeline](assets/activity/SUMMARY.md) · [Daily source data](assets/activity/activity.json).
+Real GitHub data, refreshed approximately daily. The calendar shows **API-visible contributions across eligible event types**; the trend separates eligible commits, PRs, issues and submitted PR reviews. Counts can differ from GitHub's native calendar; exact parity is not asserted. Every graphic shows its coverage and publication dates. Anonymous restricted aggregates may appear if GitHub exposes them. [Definitions and observed visibility limits](docs/ACTIVITY_DATA.md) · [Selectable statistics, monthly values and timeline](assets/activity/SUMMARY.md) · [Daily source data](assets/activity/activity.json).
 
 <picture>
   <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/activity/calendar-mobile-dark.svg" />

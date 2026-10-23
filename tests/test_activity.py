@@ -28,12 +28,13 @@ def fixture():
 
 class ActivityTests(unittest.TestCase):
     def test_schema_window_and_intensity_contract(self):
-        for mutation in ('schema', 'window', 'intensity'):
+        for mutation in ('schema', 'window', 'intensity', 'publication'):
             with self.subTest(mutation=mutation):
                 data = fixture()
                 if mutation == 'schema': data['schema_version'] = 2
                 if mutation == 'window': data['start'] = '2025-10-25'
                 if mutation == 'intensity': data['days'][0]['level'] = 1
+                if mutation == 'publication': data['updated_on'] = '2025-01-01'
                 with self.assertRaises(AssertionError): fetch.validate(data)
 
     def test_missing_duplicate_dates_rejected(self):

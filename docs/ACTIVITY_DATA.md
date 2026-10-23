@@ -2,7 +2,7 @@
 
 ## Sources and periods
 
-The Python standard-library collector reads GitHub's authenticated GraphQL `user.contributionsCollection` and public REST repository/PR endpoints. The interval is the **365 completed UTC days ending yesterday**. A successful refresh can therefore be almost two days behind a reader's local date. GitHub may also take time to index eligible activity. Each graphic prints the coverage end date; it is a data date, not a claim of instantaneous freshness.
+The Python standard-library collector reads GitHub's authenticated GraphQL `user.contributionsCollection` and public REST repository/PR endpoints. The interval is the **365 completed UTC days ending yesterday**. A successful refresh can therefore be almost two days behind a reader's local date. GitHub may also take time to index eligible activity. Each graphic prints both the coverage end date and the asset publication date. `updated_on` records the UTC day a changed snapshot was published; an identical snapshot preserves that date, so a successful no-change fetch does not create a timestamp-only commit. Exact last-run times are visible in Actions.
 
 The collector obtains daily `contributionCount` and GitHub's `contributionLevel` without rescaling or inventing intensities. Missing, duplicate, negative or inconsistent records fail validation. Calendar totals include different eligible event types; **contributions are not synonymous with commits**. The source snapshot is [activity.json](../assets/activity/activity.json); the [text summary and monthly table](../assets/activity/SUMMARY.md) provide a selectable alternative.
 
