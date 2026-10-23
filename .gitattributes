@@ -1,0 +1,4 @@
+assets/activity/** text eol=lf
+scripts/*.py text eol=lf
+tests/*.py text eol=lf
+.github/workflows/*.yml text eol=lf

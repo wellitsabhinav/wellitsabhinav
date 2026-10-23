@@ -45,7 +45,7 @@ def check():
             problems.append(f'{path.name}: missing responsive viewBox')
         ns = {'s': 'http://www.w3.org/2000/svg'}
         # The licensed MOTIF waveform is preserved byte-for-byte; the README supplies its alt text.
-        if path.name == 'motif-lin-interruption.svg' and hashlib.sha256(path.read_bytes()).hexdigest() != '0eb0fff78a23631a28ec471a688aa7c0cdd1a7242d91769fa02d062a5a4708c3':
+        if path.name == 'motif-lin-interruption.svg' and hashlib.sha256(path.read_bytes().replace(b'\r\n', b'\n')).hexdigest() != '5f060759fb5ca73b59eba163e6abbc5cc856b90525a3ceba97cccbbd6bce4bd3':
             problems.append('Licensed MOTIF waveform changed; verify attribution and provenance')
         if path.name != 'motif-lin-interruption.svg' and (not svg.findtext('s:title', namespaces=ns) or not svg.findtext('s:desc', namespaces=ns)):
             problems.append(f'{path.name}: missing accessible title/description')
