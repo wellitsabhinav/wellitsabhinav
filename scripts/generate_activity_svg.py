@@ -38,7 +38,8 @@ class SVG:
 
 
 def footer(s, data, y, size=13):
-    s.text(24, y, f'GitHub API · through {data["end"]} UTC', size, s.p['muted'])
+    s.text(24, y - 20, f'GitHub API · through {data["end"]} UTC', size, s.p['muted'])
+    s.text(24, y, f'Published {data.get("updated_on", data["end"])} UTC', size, s.p['muted'])
 
 
 def calendar(data, p, mobile=False):
@@ -49,7 +50,7 @@ def calendar(data, p, mobile=False):
     chunk = 14 if mobile else total_weeks
     panels = (total_weeks + chunk - 1) // chunk
     panel_h = 257 if mobile else 160
-    height = 106 + panels * panel_h + 72
+    height = 106 + panels * panel_h + 92
     title = 'Contribution activity monitor'
     s = SVG(width, height, title, f'{data["calendar_total"]} API-visible contributions from {data["start"]} to {data["end"]}. Dates and intensity levels are supplied by GitHub. Counts may differ from the native calendar. This is not a commit count.', p)
     s.text(24, 34, 'API-VISIBLE CONTRIBUTIONS', 18, p['accent'], font_weight=700, letter_spacing=1)
@@ -75,7 +76,7 @@ def calendar(data, p, mobile=False):
             s.items.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2" fill="{p["levels"][d["level"]]}" stroke="{p["grid"]}" stroke-width=".5" data-date="{d["date"]}" data-count="{d["count"]}" data-level="{d["level"]}"><title>{d["date"]}: {d["count"]} contributions; GitHub intensity {d["level"]}/4</title></rect>')
         for weekday, label in [(1, 'M'), (3, 'W'), (5, 'F')]:
             s.text(26, y0 + weekday * pitch + cell - 1, label, 16 if mobile else 13, p['muted'])
-    legend_y = height - 54
+    legend_y = height - 74
     s.text(24, legend_y + 12, 'Less', 15, p['muted'])
     for i, color in enumerate(p['levels']):
         s.items.append(f'<rect x="{67 + i * 23}" y="{legend_y}" width="18" height="18" rx="2" fill="{color}" stroke="{p["grid"]}"/>')
@@ -122,7 +123,7 @@ def trend(data, p, mobile=False):
 
 
 def stats_mobile(data, p):
-    s = SVG(360, 624, 'Verified GitHub activity statistics', f'Public repository inventory at refresh; activity from {data["start"]} to {data["end"]}. Definitions and exact values are also in the linked Markdown table.', p)
+    s = SVG(360, 644, 'Verified GitHub activity statistics', f'Public repository inventory at refresh; activity from {data["start"]} to {data["end"]}. Definitions and exact values are also in the linked Markdown table.', p)
     s.text(24, 34, 'VERIFIABLE ACTIVITY', 19, p['accent'], font_weight=700, letter_spacing=1)
     s.text(24, 60, f'{data["start"]} — {data["end"]}', 16, p['muted'])
     labels = [('public_repositories', 'Public repositories · inventory'),
@@ -137,12 +138,12 @@ def stats_mobile(data, p):
         s.text(24, y + 34, f'{data["stats"][key]:,}', 28, font_weight=700)
         s.line(24, y + 48, 336, y + 48)
     s.text(24, 579, 'Sources: public REST + GraphQL', 16, p['muted'])
-    footer(s, data, 612, 15)
+    footer(s, data, 632, 15)
     return s.finish()
 
 
 def stats(data, p):
-    s = SVG(480, 424, 'Verified GitHub activity statistics', f'Public repository inventory at refresh, activity from {data["start"]} to {data["end"]}. Merged PRs count merge dates, opened PRs count creation dates.', p)
+    s = SVG(480, 444, 'Verified GitHub activity statistics', f'Public repository inventory at refresh, activity from {data["start"]} to {data["end"]}. Merged PRs count merge dates, opened PRs count creation dates.', p)
     s.text(24, 34, 'VERIFIABLE ACTIVITY', 19, p['accent'], font_weight=700, letter_spacing=1)
     s.text(24, 60, f'{data["start"]} — {data["end"]}', 16, p['muted'])
     labels = [('public_repositories', 'Public repositories · current inventory'),
@@ -157,7 +158,7 @@ def stats(data, p):
         s.text(452, y + 3, f'{data["stats"][key]:,}', 23, font_weight=700, text_anchor='end')
         s.line(24, y + 16, 454, y + 16)
     s.text(24, 393, 'Sources: public REST + GraphQL; see data notes.', 14, p['muted'])
-    footer(s, data, 414, 14)
+    footer(s, data, 434, 14)
     return s.finish()
 
 
@@ -179,7 +180,7 @@ def timeline(data, p):
 
 
 def summary(data):
-    lines = ['# Activity data in text', '', f'Period: **{data["start"]}–{data["end"]} UTC**. Last successful data coverage: **{data["end"]}**.', '',
+    lines = ['# Activity data in text', '', f'Period: **{data["start"]}–{data["end"]} UTC**. Last successful data coverage: **{data["end"]}**. Assets published: **{data.get("updated_on", data["end"])} UTC**.', '',
              f'API-visible calendar: **{data["calendar_total"]:,} contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count. Counts can differ from the native GitHub calendar; see the observed visibility limitation below.', '',
              '[Definitions and visibility limits](../../docs/ACTIVITY_DATA.md) · [Machine-readable daily data](activity.json)', '',
              '| Metric | Count |', '|---|---:|']

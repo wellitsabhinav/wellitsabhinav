@@ -171,6 +171,15 @@ def main():
     if not token:
         raise RuntimeError('Set GH_TOKEN or GITHUB_TOKEN. No synthetic or stale-data fallback is published.')
     snapshot = fetch(args.login, args.end, token)
+    previous = {}
+    if args.output.exists():
+        try:
+            previous = json.loads(args.output.read_text(encoding='utf-8'))
+        except (ValueError, UnicodeError):
+            pass
+    previous_facts = {k: v for k, v in previous.items() if k != 'updated_on'}
+    today = datetime.now(timezone.utc).date().isoformat()
+    snapshot['updated_on'] = previous.get('updated_on', today) if previous_facts == snapshot else today
     validate(snapshot)
     serialized = json.dumps(snapshot, indent=2, ensure_ascii=False) + '\n'
     args.output.parent.mkdir(parents=True, exist_ok=True)

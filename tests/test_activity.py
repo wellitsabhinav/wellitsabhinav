@@ -78,6 +78,17 @@ class ActivityTests(unittest.TestCase):
                 with self.assertRaises(RuntimeError): fetch.main()
             self.assertEqual(output.read_text(), 'previous valid snapshot')
 
+    def test_unchanged_fetch_preserves_publication_date_and_bytes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory) / 'activity.json'
+            data = fixture()
+            previous = {**data, 'updated_on': data['end']}
+            before = json.dumps(previous, indent=2, ensure_ascii=False) + '\n'
+            output.write_text(before, encoding='utf-8', newline='\n')
+            with patch.dict('os.environ', {'GH_TOKEN': 'test-only-token'}), patch.object(sys, 'argv', ['fetch_activity.py', '--output', str(output)]), patch.object(fetch, 'fetch', return_value=data):
+                fetch.main()
+            self.assertEqual(output.read_text(encoding='utf-8'), before)
+
 
 if __name__ == '__main__':
     unittest.main()
