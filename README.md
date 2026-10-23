@@ -96,10 +96,14 @@ Real GitHub data, refreshed approximately daily. The calendar shows **API-visibl
 </picture>
 
 <picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/activity/trend-mobile-dark.svg" />
+  <source media="(max-width: 600px)" srcset="assets/activity/trend-mobile-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/activity/trend-dark.svg" />
   <img src="assets/activity/trend-light.svg" width="480" alt="Monthly time-series plots with separate linear scales for eligible commit contributions, PR contributions, issues and submitted PR reviews. Exact monthly values are available in the linked text summary." />
 </picture>
 <picture>
+  <source media="(prefers-color-scheme: dark) and (max-width: 600px)" srcset="assets/activity/stats-mobile-dark.svg" />
+  <source media="(max-width: 600px)" srcset="assets/activity/stats-mobile-light.svg" />
   <source media="(prefers-color-scheme: dark)" srcset="assets/activity/stats-dark.svg" />
   <img src="assets/activity/stats-light.svg" width="480" alt="Verified GitHub statistics: public repository inventory, stars on original repositories, eligible commits, public PRs opened and merged, and external PRs opened. Definitions and periods are linked above." />
 </picture>

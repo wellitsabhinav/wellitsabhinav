@@ -84,27 +84,31 @@ def calendar(data, p, mobile=False):
     return s.finish()
 
 
-def trend(data, p):
+def trend(data, p, mobile=False):
     # Small multiples share exact counts, never a misleading dual axis or a stacked total.
-    s = SVG(480, 648, 'Monthly development activity', 'Four separate linear time series: API-visible eligible commit contributions, pull requests, issues, and pull request reviews. Partial boundary months are included. Values are in the linked JSON and Markdown table.', p)
+    s = SVG(360 if mobile else 480, 648, 'Monthly development activity', 'Four separate linear time series: API-visible eligible commit contributions, pull requests, issues, and pull request reviews. Partial boundary months are included. Values are in the linked JSON and Markdown table.', p)
+    right = 336 if mobile else 450
+    left = 54 if mobile else 61
     s.text(24, 34, 'DEVELOPMENT ACTIVITY', 19, p['accent'], font_weight=700, letter_spacing=1)
-    s.text(24, 59, 'Monthly counts · partial boundary months', 16, p['muted'])
+    s.text(24, 59, 'Monthly · boundary months partial' if mobile else 'Monthly counts · partial boundary months', 16, p['muted'])
     series = [('commits', 'Eligible commit contributions', p['accent']), ('prs', 'Pull request contributions', p['violet']),
               ('issues', 'Issue contributions', p['green']), ('reviews', 'Pull request review contributions', p['amber'])]
     n = len(data['monthly'])
     for index, (key, label, color) in enumerate(series):
+        if mobile and key == 'reviews':
+            label = 'PR review contributions'
         top = 92 + index * 132
         values = [m[key] for m in data['monthly']]
         ceiling = max(1, max(values))
         s.text(24, top, label, 17, color, font_weight=700)
-        s.text(450, top, f'Σ {sum(values):,}', 16, p['muted'], text_anchor='end')
+        s.text(right, top, f'Σ {sum(values):,}', 16, p['muted'], text_anchor='end')
         for fraction in (0, .5, 1):
             y = top + 76 - fraction * 58
-            s.line(61, y, 450, y, stroke_dasharray='3 4')
-            s.text(52, y + 5, f'{ceiling * fraction:g}', 13, p['muted'], text_anchor='end')
+            s.line(left, y, right, y, stroke_dasharray='3 4')
+            s.text(left - 9, y + 5, f'{ceiling * fraction:g}', 14 if mobile else 13, p['muted'], text_anchor='end')
         points = []
         for i, (value, month) in enumerate(zip(values, data['monthly'])):
-            x = 61 + i * 389 / max(1, n - 1)
+            x = left + i * (right - left) / max(1, n - 1)
             y = top + 76 - value / ceiling * 58
             points.append(f'{x:.2f},{y:.2f}')
             s.items.append(f'<circle cx="{x:.2f}" cy="{y:.2f}" r="3" fill="{color}"><title>{month["start"]} to {month["end"]}: {value} {escape(label)}</title></circle>')
@@ -112,8 +116,28 @@ def trend(data, p):
         for i in range(n):
             if i in {0, n // 3, 2 * n // 3, n - 1}:
                 d = date.fromisoformat(data['monthly'][i]['start'])
-                s.text(61 + i * 389 / max(1, n - 1), top + 101, d.strftime('%b %y'), 12, p['muted'], text_anchor='middle')
+                s.text(left + i * (right - left) / max(1, n - 1), top + 101, d.strftime('%b %y'), 14 if mobile else 12, p['muted'], text_anchor='middle')
     footer(s, data, 638, 14)
+    return s.finish()
+
+
+def stats_mobile(data, p):
+    s = SVG(360, 624, 'Verified GitHub activity statistics', f'Public repository inventory at refresh; activity from {data["start"]} to {data["end"]}. Definitions and exact values are also in the linked Markdown table.', p)
+    s.text(24, 34, 'VERIFIABLE ACTIVITY', 19, p['accent'], font_weight=700, letter_spacing=1)
+    s.text(24, 60, f'{data["start"]} — {data["end"]}', 16, p['muted'])
+    labels = [('public_repositories', 'Public repositories · inventory'),
+              ('original_repository_stars', 'Stars · original repositories'),
+              ('visible_commit_contributions', 'API-visible eligible commits'),
+              ('prs_opened', 'Public PRs opened in period'),
+              ('prs_merged', 'Authored PRs merged in period'),
+              ('external_prs_opened', 'External public PRs opened')]
+    for i, (key, label) in enumerate(labels):
+        y = 104 + i * 78
+        s.text(24, y, label, 17, p['muted'])
+        s.text(24, y + 34, f'{data["stats"][key]:,}', 28, font_weight=700)
+        s.line(24, y + 48, 336, y + 48)
+    s.text(24, 579, 'Sources: public REST + GraphQL', 16, p['muted'])
+    footer(s, data, 612, 15)
     return s.finish()
 
 
@@ -178,7 +202,9 @@ def generate(data, output):
         files[f'calendar-{theme}.svg'] = calendar(data, palette)
         files[f'calendar-mobile-{theme}.svg'] = calendar(data, palette, mobile=True)
         files[f'trend-{theme}.svg'] = trend(data, palette)
+        files[f'trend-mobile-{theme}.svg'] = trend(data, palette, mobile=True)
         files[f'stats-{theme}.svg'] = stats(data, palette)
+        files[f'stats-mobile-{theme}.svg'] = stats_mobile(data, palette)
         files[f'timeline-{theme}.svg'] = timeline(data, palette)
     for name, content in files.items():
         (output / name).write_text(content, encoding='utf-8', newline='\n')
