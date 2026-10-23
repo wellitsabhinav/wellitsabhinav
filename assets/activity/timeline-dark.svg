@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 762" width="480" role="img" aria-labelledby="title desc">
+<title id="title">Evidence-linked open-source contributions</title><desc id="desc">Merged contributions and open proposals shown separately. Each item is also linked in ordinary Markdown. The two mwsoli/OpenROAD proposals target a maintainer fork.</desc>
+<rect width="480" height="762" rx="12" fill="#0D1117"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="24" y="34" font-size="19" fill="#00D4FF" font-weight="700" letter-spacing="1">OPEN-SOURCE EVIDENCE</text>
+<text x="24" y="60" font-size="14" fill="#A9B5C4" >Merge dates for merged PRs; opening dates otherwise</text>
+<line x1="32" y1="94" x2="32" y2="700" stroke="#304052" />
+<circle cx="32" cy="96" r="5" fill="#72E0B4"/>
+<text x="50" y="101" font-size="14" fill="#72E0B4" font-weight="700">2026-10-15 · MERGED</text>
+<text x="50" y="126" font-size="15" fill="#F0F6FC" >parallaxsw/OpenSTA #538</text>
+<text x="50" y="149" font-size="14" fill="#A9B5C4" >Reject unsupported wired nets</text>
+<circle cx="32" cy="190" r="5" fill="#72E0B4"/>
+<text x="50" y="195" font-size="14" fill="#72E0B4" font-weight="700">2026-10-20 · MERGED</text>
+<text x="50" y="220" font-size="15" fill="#F0F6FC" >The-OpenROAD-Project/OpenSTA #420</text>
+<text x="50" y="243" font-size="14" fill="#A9B5C4" >Preserve Verilog input aliases</text>
+<circle cx="32" cy="284" r="5" fill="#72E0B4"/>
+<text x="50" y="289" font-size="14" fill="#72E0B4" font-weight="700">2026-10-21 · MERGED</text>
+<text x="50" y="314" font-size="15" fill="#F0F6FC" >The-OpenROAD-Project/OpenROAD #11624</text>
+<text x="50" y="337" font-size="14" fill="#A9B5C4" >Preserve local port connectivity</text>
+<circle cx="32" cy="378" r="5" fill="#72E0B4"/>
+<text x="50" y="383" font-size="14" fill="#72E0B4" font-weight="700">2026-10-21 · MERGED</text>
+<text x="50" y="408" font-size="15" fill="#F0F6FC" >parallaxsw/OpenSTA #540</text>
+<text x="50" y="431" font-size="14" fill="#A9B5C4" >Upstream alias serialization repair</text>
+<circle cx="32" cy="472" r="5" fill="#FFC479"/>
+<text x="50" y="477" font-size="14" fill="#FFC479" font-weight="700">2026-10-03 · OPEN</text>
+<text x="50" y="502" font-size="15" fill="#F0F6FC" >mwsoli/OpenROAD #1</text>
+<text x="50" y="525" font-size="14" fill="#A9B5C4" >DFT scan-pin receiver fix (fork target)</text>
+<circle cx="32" cy="566" r="5" fill="#FFC479"/>
+<text x="50" y="571" font-size="14" fill="#FFC479" font-weight="700">2026-10-03 · OPEN</text>
+<text x="50" y="596" font-size="15" fill="#F0F6FC" >mwsoli/OpenROAD #2</text>
+<text x="50" y="619" font-size="14" fill="#A9B5C4" >DFT endpoint and metadata fix (fork target)</text>
+<circle cx="32" cy="660" r="5" fill="#FFC479"/>
+<text x="50" y="665" font-size="14" fill="#FFC479" font-weight="700">2026-10-04 · OPEN</text>
+<text x="50" y="690" font-size="15" fill="#F0F6FC" >NTU-LaDS-II/FAN_ATPG #4</text>
+<text x="50" y="713" font-size="14" fill="#A9B5C4" >Fault reporting and scan identities</text>
+<text x="24" y="730" font-size="14" fill="#A9B5C4" >GitHub API · through 2026-10-22 UTC</text>
+<text x="24" y="750" font-size="14" fill="#A9B5C4" >Published 2026-10-23 UTC</text>
+</g></svg>

@@ -1,0 +1,57 @@
+name: Refresh activity
+
+on:
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main, codex/profile-activity-redesign]
+    paths:
+      - scripts/**
+      - .github/workflows/activity.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: activity-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: true
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Fetch complete data, then render
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/fetch_activity.py
+          python scripts/generate_activity_svg.py
+          python scripts/validate_profile.py
+          python -m unittest discover -s tests -v
+      - name: Publish only changed, validated assets
+        env:
+          TARGET_REF: ${{ github.ref_name }}
+        run: |
+          git add assets/activity
+          if git diff --cached --quiet; then
+            echo 'Snapshot and graphics are unchanged; no commit needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: refresh verified GitHub activity [skip ci]'
+          git push origin "HEAD:$TARGET_REF"
+      - name: Explain failure
+        if: failure()
+        run: echo '::error::Refresh did not publish. Last committed assets remain available. Inspect fetch, validation, or push diagnostics; dispatch again after resolving API permissions/rate limits or branch protection.'
