@@ -1,8 +1,8 @@
 # Activity data in text
 
-Period: **2025-10-23–2026-10-22 UTC**. Last successful data coverage: **2026-10-22**. Assets published: **2026-10-23 UTC**.
+Period: **2025-10-24–2026-10-23 UTC**. Last successful data coverage: **2026-10-23**. Assets published: **2026-10-24 UTC**.
 
-API-visible calendar: **714 contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count. Counts can differ from the native GitHub calendar; see the observed visibility limitation below.
+API-visible calendar: **715 contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count. Counts can differ from the native GitHub calendar; see the observed visibility limitation below.
 
 [Definitions and visibility limits](../../docs/ACTIVITY_DATA.md) · [Machine-readable daily data](activity.json)
 
@@ -11,15 +11,15 @@ API-visible calendar: **714 contributions**. This includes eligible contribution
 | public repositories | 10 |
 | original repository stars | 6 |
 | visible commit contributions | 583 |
-| prs opened | 102 |
-| prs merged | 98 |
+| prs opened | 103 |
+| prs merged | 99 |
 | external prs opened | 7 |
 
 ## Monthly activity
 
 | UTC window | Eligible commits | PR contributions | Issues | PR reviews |
 |---|---:|---:|---:|---:|
-| 2025-10-23–2025-10-31 | 0 | 0 | 0 | 0 |
+| 2025-10-24–2025-10-31 | 0 | 0 | 0 | 0 |
 | 2025-11-01–2025-11-30 | 8 | 5 | 0 | 0 |
 | 2025-12-01–2025-12-31 | 1 | 0 | 0 | 0 |
 | 2026-01-01–2026-01-31 | 10 | 4 | 0 | 0 |
@@ -31,7 +31,7 @@ API-visible calendar: **714 contributions**. This includes eligible contribution
 | 2026-07-01–2026-07-31 | 0 | 0 | 0 | 0 |
 | 2026-08-01–2026-08-31 | 11 | 0 | 0 | 0 |
 | 2026-09-01–2026-09-30 | 91 | 1 | 1 | 0 |
-| 2026-10-01–2026-10-22 | 343 | 39 | 5 | 4 |
+| 2026-10-01–2026-10-23 | 343 | 39 | 5 | 5 |
 
 ## Upstream evidence
 
