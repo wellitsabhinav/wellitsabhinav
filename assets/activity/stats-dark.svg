@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 444" width="480" role="img" aria-labelledby="title desc">
-<title id="title">Verified GitHub activity statistics</title><desc id="desc">Public repository inventory at refresh, activity from 2025-10-26 to 2026-10-25. Merged PRs count merge dates, opened PRs count creation dates.</desc>
+<title id="title">Verified GitHub activity statistics</title><desc id="desc">Public repository inventory at refresh, activity from 2025-10-27 to 2026-10-26. Merged PRs count merge dates, opened PRs count creation dates.</desc>
 <rect width="480" height="444" rx="12" fill="#0D1117"/>
 <g font-family="Arial, Helvetica, sans-serif">
 <text x="24" y="34" font-size="19" fill="#00D4FF" font-weight="700" letter-spacing="1">VERIFIABLE ACTIVITY</text>
-<text x="24" y="60" font-size="16" fill="#A9B5C4" >2025-10-26 — 2026-10-25</text>
+<text x="24" y="60" font-size="16" fill="#A9B5C4" >2025-10-27 — 2026-10-26</text>
 <text x="24" y="102" font-size="15" fill="#A9B5C4" >Public repositories · current inventory</text>
 <text x="452" y="105" font-size="23" fill="#F0F6FC" font-weight="700" text-anchor="end">10</text>
 <line x1="24" y1="118" x2="454" y2="118" stroke="#304052" />
@@ -23,6 +23,6 @@
 <text x="452" y="345" font-size="23" fill="#F0F6FC" font-weight="700" text-anchor="end">7</text>
 <line x1="24" y1="358" x2="454" y2="358" stroke="#304052" />
 <text x="24" y="393" font-size="14" fill="#A9B5C4" >Sources: public REST + GraphQL; see data notes.</text>
-<text x="24" y="414" font-size="14" fill="#A9B5C4" >GitHub API · through 2026-10-25 UTC</text>
-<text x="24" y="434" font-size="14" fill="#A9B5C4" >Published 2026-10-26 UTC</text>
+<text x="24" y="414" font-size="14" fill="#A9B5C4" >GitHub API · through 2026-10-26 UTC</text>
+<text x="24" y="434" font-size="14" fill="#A9B5C4" >Published 2026-10-27 UTC</text>
 </g></svg>
