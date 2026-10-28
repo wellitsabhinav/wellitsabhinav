@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 644" width="360" role="img" aria-labelledby="title desc">
-<title id="title">Verified GitHub activity statistics</title><desc id="desc">Public repository inventory at refresh; activity from 2025-10-27 to 2026-10-26. Definitions and exact values are also in the linked Markdown table.</desc>
+<title id="title">Verified GitHub activity statistics</title><desc id="desc">Public repository inventory at refresh; activity from 2025-10-28 to 2026-10-27. Definitions and exact values are also in the linked Markdown table.</desc>
 <rect width="360" height="644" rx="12" fill="#FFFFFF"/>
 <g font-family="Arial, Helvetica, sans-serif">
 <text x="24" y="34" font-size="19" fill="#006B87" font-weight="700" letter-spacing="1">VERIFIABLE ACTIVITY</text>
-<text x="24" y="60" font-size="16" fill="#4B5E73" >2025-10-27 — 2026-10-26</text>
+<text x="24" y="60" font-size="16" fill="#4B5E73" >2025-10-28 — 2026-10-27</text>
 <text x="24" y="104" font-size="17" fill="#4B5E73" >Public repositories · inventory</text>
 <text x="24" y="138" font-size="28" fill="#101C2C" font-weight="700">10</text>
 <line x1="24" y1="152" x2="336" y2="152" stroke="#CBD5E1" />
@@ -11,7 +11,7 @@
 <text x="24" y="216" font-size="28" fill="#101C2C" font-weight="700">6</text>
 <line x1="24" y1="230" x2="336" y2="230" stroke="#CBD5E1" />
 <text x="24" y="260" font-size="17" fill="#4B5E73" >API-visible eligible commits</text>
-<text x="24" y="294" font-size="28" fill="#101C2C" font-weight="700">593</text>
+<text x="24" y="294" font-size="28" fill="#101C2C" font-weight="700">594</text>
 <line x1="24" y1="308" x2="336" y2="308" stroke="#CBD5E1" />
 <text x="24" y="338" font-size="17" fill="#4B5E73" >Public PRs opened in period</text>
 <text x="24" y="372" font-size="28" fill="#101C2C" font-weight="700">104</text>
@@ -23,6 +23,6 @@
 <text x="24" y="528" font-size="28" fill="#101C2C" font-weight="700">7</text>
 <line x1="24" y1="542" x2="336" y2="542" stroke="#CBD5E1" />
 <text x="24" y="579" font-size="16" fill="#4B5E73" >Sources: public REST + GraphQL</text>
-<text x="24" y="612" font-size="15" fill="#4B5E73" >GitHub API · through 2026-10-26 UTC</text>
-<text x="24" y="632" font-size="15" fill="#4B5E73" >Published 2026-10-27 UTC</text>
+<text x="24" y="612" font-size="15" fill="#4B5E73" >GitHub API · through 2026-10-27 UTC</text>
+<text x="24" y="632" font-size="15" fill="#4B5E73" >Published 2026-10-28 UTC</text>
 </g></svg>
