@@ -1,18 +1,13 @@
 {
   "schema_version": 1,
   "login": "wellitsabhinav",
-  "start": "2025-10-31",
-  "end": "2026-10-30",
+  "start": "2025-11-01",
+  "end": "2026-10-31",
   "source": "GitHub GraphQL contributionsCollection + public REST repositories/PRs + public GraphQL search",
   "scope": "API-visible contribution counts; calendar may include anonymous restricted aggregates. No private repository details.",
   "restricted_count": 9,
   "calendar_total": 728,
   "days": [
-    {
-      "date": "2025-10-31",
-      "count": 0,
-      "level": 0
-    },
     {
       "date": "2025-11-01",
       "count": 0,
@@ -1832,17 +1827,14 @@
       "date": "2026-10-30",
       "count": 0,
       "level": 0
+    },
+    {
+      "date": "2026-10-31",
+      "count": 0,
+      "level": 0
     }
   ],
   "monthly": [
-    {
-      "start": "2025-10-31",
-      "end": "2025-10-31",
-      "commits": 0,
-      "prs": 0,
-      "issues": 0,
-      "reviews": 0
-    },
     {
       "start": "2025-11-01",
       "end": "2025-11-30",
@@ -1933,7 +1925,7 @@
     },
     {
       "start": "2026-10-01",
-      "end": "2026-10-30",
+      "end": "2026-10-31",
       "commits": 354,
       "prs": 41,
       "issues": 5,
@@ -2006,5 +1998,5 @@
       "date": "2026-10-04"
     }
   ],
-  "updated_on": "2026-10-31"
+  "updated_on": "2026-11-01"
 }
