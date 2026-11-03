@@ -1,18 +1,13 @@
 {
   "schema_version": 1,
   "login": "wellitsabhinav",
-  "start": "2025-11-02",
-  "end": "2026-11-01",
+  "start": "2025-11-03",
+  "end": "2026-11-02",
   "source": "GitHub GraphQL contributionsCollection + public REST repositories/PRs + public GraphQL search",
   "scope": "API-visible contribution counts; calendar may include anonymous restricted aggregates. No private repository details.",
   "restricted_count": 9,
-  "calendar_total": 728,
+  "calendar_total": 725,
   "days": [
-    {
-      "date": "2025-11-02",
-      "count": 3,
-      "level": 1
-    },
     {
       "date": "2025-11-03",
       "count": 10,
@@ -1832,14 +1827,19 @@
       "date": "2026-11-01",
       "count": 0,
       "level": 0
+    },
+    {
+      "date": "2026-11-02",
+      "count": 0,
+      "level": 0
     }
   ],
   "monthly": [
     {
-      "start": "2025-11-02",
+      "start": "2025-11-03",
       "end": "2025-11-30",
-      "commits": 8,
-      "prs": 5,
+      "commits": 6,
+      "prs": 4,
       "issues": 0,
       "reviews": 0
     },
@@ -1933,7 +1933,7 @@
     },
     {
       "start": "2026-11-01",
-      "end": "2026-11-01",
+      "end": "2026-11-02",
       "commits": 0,
       "prs": 0,
       "issues": 0,
@@ -1943,9 +1943,9 @@
   "stats": {
     "public_repositories": 10,
     "original_repository_stars": 6,
-    "visible_commit_contributions": 594,
-    "prs_opened": 104,
-    "prs_merged": 99,
+    "visible_commit_contributions": 592,
+    "prs_opened": 99,
+    "prs_merged": 94,
     "external_prs_opened": 7
   },
   "milestones": [
@@ -2006,5 +2006,5 @@
       "date": "2026-10-04"
     }
   ],
-  "updated_on": "2026-11-02"
+  "updated_on": "2026-11-03"
 }
