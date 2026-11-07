@@ -1,6 +1,6 @@
 # Activity data in text
 
-Period: **2025-11-06–2026-11-05 UTC**. Last successful data coverage: **2026-11-05**. Assets published: **2026-11-06 UTC**.
+Period: **2025-11-07–2026-11-06 UTC**. Last successful data coverage: **2026-11-06**. Assets published: **2026-11-07 UTC**.
 
 API-visible calendar: **715 contributions**. This includes eligible contribution types and may include anonymous private aggregates; it is not a commit count. Counts can differ from the native GitHub calendar; see the observed visibility limitation below.
 
@@ -19,7 +19,7 @@ API-visible calendar: **715 contributions**. This includes eligible contribution
 
 | UTC window | Eligible commits | PR contributions | Issues | PR reviews |
 |---|---:|---:|---:|---:|
-| 2025-11-06–2025-11-30 | 0 | 0 | 0 | 0 |
+| 2025-11-07–2025-11-30 | 0 | 0 | 0 | 0 |
 | 2025-12-01–2025-12-31 | 1 | 0 | 0 | 0 |
 | 2026-01-01–2026-01-31 | 10 | 4 | 0 | 0 |
 | 2026-02-01–2026-02-28 | 0 | 0 | 0 | 0 |
@@ -31,7 +31,7 @@ API-visible calendar: **715 contributions**. This includes eligible contribution
 | 2026-08-01–2026-08-31 | 11 | 0 | 0 | 0 |
 | 2026-09-01–2026-09-30 | 91 | 1 | 1 | 0 |
 | 2026-10-01–2026-10-31 | 354 | 41 | 5 | 5 |
-| 2026-11-01–2026-11-05 | 0 | 0 | 0 | 0 |
+| 2026-11-01–2026-11-06 | 0 | 0 | 0 | 0 |
 
 ## Upstream evidence
 
